@@ -81,8 +81,14 @@ def deleteTask(request, id):
 
 @login_required
 def faturaTask(request):
-    df = main.read_sql()
-    df2 = main.read_sql2()
+
+    aa = main.read_sql_xx()
+    ss = main.read_sql_user(request.user)
+
+    id_user = ss.id[0]
+
+    df = main.read_sql(id_user)
+    df2 = main.read_sql2(id_user)
     x = df.varcont
     y = df2.varcont
 
