@@ -4,15 +4,16 @@
     padding: 0;
 }
 
-/* .container-fluid .row{
+.container-fluid .row{
     margin: 0;
-} */
-
+}
 
 /* Navbar */
  .navbar {
     border-bottom: 1px solid #333;
     margin-bottom: 20px;
+   /* height: 80px;*/
+    
 }
 
 .navbar-nav {
@@ -34,6 +35,17 @@
     text-decoration: none;
 }
 
+#alinha-bt{
+    display: inline-block;
+    cursor: pointer;
+    color: #FFF;
+    padding: 6px;
+    border-radius: 5px;
+    margin-right: 10px;
+    position: relative;
+    top: -3px;
+}
+
 .add-div{
     background-color: #347;
     cursor: pointer;
@@ -46,7 +58,7 @@
 
 .fas.fa-plus{
     color: #FFF;
-    margin-right: 10px;
+    margin-right: 20px;
     margin-left: 5px;
 }
 
@@ -63,7 +75,29 @@
     margin-top: 15px;
     margin-bottom: 15px;
     display: inline-block;
+    position: relative;
+    top: -10px;
+    
 }
+
+
+
+
+/* Filetr */
+.filter-div{
+    margin-bottom: 15px;
+    padding: 0;
+    position: relative;
+    top: -30px;
+    right: -80px;
+}
+
+#filtery{
+    display: inline-block;
+    width: 200px;
+    margin-left: 10px;
+}
+
 
 /* .form-control{
     position: absolute;
@@ -86,18 +120,19 @@
     list-style: none;
     font-size: 20px;
     height: 50px;
+    padding: 0 15px;
     padding-top: 10px;
     border-bottom: 1px dashed #ccc;
+    border-radius: 10px;
+
 }
 
-.fas.fa-trash, .fas.fa-edit {
-    cursor: pointer;
-    margin: 5px;
-    font-size: 20px;
-    float: right;
+.task-item.done{
+    background-color: #ccc;
+    border: 1px solid #778899;
 }
 
-.fas.fa-check{
+.fas.fa-trash, .fas.fa-edit, .fas.fa-check{
     cursor: pointer;
     margin: 5px;
     font-size: 20px;
@@ -110,6 +145,14 @@
 
 .fas.fa-edit {
     color: #13c43f;
+}
+
+.fas.fa-check {
+    color: #ccc;
+}
+
+.done .fas.fa-check {
+    color: #3476e2;
 }
 
 #name-task {
@@ -162,25 +205,42 @@ ul.messages li{
     margin-bottom: 30px;
 }
 
-.minhaTabela tr td{
+
+/*
+.minhaTabela tr td {
     font-size: 18px;
+
+    width: 100%;
     text-align: center;
-    width: 250px;
+    overflow:hidden;
+    border-collapse:separate;
+    border: solid #ccc 1px;
+    -webkit-border-radius: 25px;
+       -moz-border-radius: 25px;
+            border-radius: 25px;
+
+
+    text-align: center;
+    width: 200px;
     cursor: pointer;
     border-collapse: collapse;
     border: 1px solid #778899;
     margin-bottom: 20px;
     margin-right: 20px;
+    border-radius: 5px;
+    }
+    */
 
-}
 
 /**Cor quando passar por cima**/
+/*
 .minhaTabela tr:hover td{
     background-color: #B0E0E6;
     margin-right: 20px;
 }
-  
+*/
 /**Cor quando selecionado**/
+/*
 .minhaTabela tr.selecionado td{
     background-color: #CD853F;
     margin-right: 20px;
@@ -189,6 +249,16 @@ ul.messages li{
 #tr-alinha{
     width: auto;
     margin-right: 20px;
+}
+#tr-alinha2{
+    width: 80px;
+    margin-right: 20px;
+    color: white;
+}
+
+.change-form-p{
+    margin-top: 30px;
+    text-align: center;
 }
 
 #tr-alinha-L{
@@ -210,4 +280,53 @@ ul.messages li{
 .change-form-p{
     margin-top: 30px;
     text-align: center;
+}
+
+*/
+
+
+/*----------------------------------*/
+
+.table-round-corner {
+    margin-top: 15px;
+    width: 80%;
+    text-align: center;
+    overflow:hidden;
+    border-collapse:separate;
+    border: solid #ccc 1px;
+    -webkit-border-radius: 15px;
+       -moz-border-radius: 15px;
+            border-radius: 15px;
+}
+
+/**Cor quando passar por cima**/
+.table-round-corner tr:hover td{
+    background-color: #B0E0E6;
+    margin-right: 20px;
+}
+  
+/**Cor quando selecionado**/
+.table-round-corner tr.selecionado td{
+    background-color: #CD853F;
+    margin-right: 20px;
+}
+
+
+table td {
+    color: #aaa;
+    background-color: white;
+    font-weight: normal;
+    text-align: center;
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+}
+
+table th{
+    color: white;
+    background-color: #708090;
+    font-weight: normal;
+    text-align: center;
+    padding: 5px;
+    font-size: 16px;
 }

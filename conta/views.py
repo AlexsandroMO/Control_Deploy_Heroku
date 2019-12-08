@@ -13,12 +13,15 @@ import pandas as pd
 def taskList(request):
 
     search = request.GET.get('search')
+    filtery = request.GET.get('filtery')
 
     if search:
         tasks = Task.objects.filter(name__icontains=search, user=request.user)
+    elif filtery:
+        tasks = Task.objects.filter(done=filtery, user=request.user)
     else:
         tasks_list = Task.objects.all().order_by('-type_task').filter(user=request.user)
-        paginator = Paginator(tasks_list, 16) #quantidde de linhas
+        paginator = Paginator(tasks_list, 5) #quantidde de linhas
         page = request.GET.get('page')
         tasks = paginator.get_page(page)
 
@@ -79,6 +82,21 @@ def deleteTask(request, id):
     return redirect('/')
 
 
+
+@login_required
+def changeStatus(request, id):
+    task = get_object_or_404(Task, pk=id)
+
+    if (task.done == 'Pagar'):
+        task.done = 'Pago'
+    else:
+        task.done = 'Pagar'
+    
+    task.save()
+
+    return redirect('/')
+
+
 @login_required
 def faturaTask(request):
 
@@ -122,7 +140,5 @@ def yourName(request):
 
 def helloworld(request):
     return HttpResponse('Hello World!')
-
-
 
 
